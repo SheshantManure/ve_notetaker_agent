@@ -23,7 +23,7 @@ app.get("/join-meeting", async (req, res) => {
 
     schedule.scheduleJob(date.toDate(), async () => {
       const browser = await puppeteer.launch({
-        headless: false, // use 'shell in production'
+        headless: true, // use 'shell in production'
         args: ["--use-fake-ui-for-media-stream"], // This ensures a consistent media stream handling behavior for automated joining
       });
 
